@@ -32,6 +32,24 @@ class Student:
                 f' Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n'
                 f' Завершенные  курсы: {", ".join(self.finished_courses)}')
 
+    def __lt__(self, other):
+        return self.average_grade() < other.average_grade()
+
+    def __le__(self, other):
+        return self.average_grade() <= other.average_grade()
+
+    def __eq__(self, other):
+        return self.average_grade() == other.average_grade()
+
+    def __ne__(self, other):
+        return self.average_grade() != other.average_grade()
+
+    def __gt__(self, other):
+        return self.average_grade() > other.average_grade()
+
+    def __ge__(self, other):
+        return self.average_grade() >= other.average_grade()
+
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
@@ -55,6 +73,24 @@ class Lecturer(Mentor):
         return (f'Имя: {self.name}\n'
                 f' Фамилия: {self.surname}\n'
                 f' Средняя оценка за лекции: {self.average_grade():.1f}')
+
+    def __lt__(self, other):
+        return self.average_grade() < other.average_grade()
+
+    def __le__(self, other):
+        return self.average_grade() <= other.average_grade()
+
+    def __eq__(self, other):
+        return self.average_grade() == other.average_grade()
+
+    def __ne__(self, other):
+        return self.average_grade() != other.average_grade()
+
+    def __gt__(self, other):
+        return self.average_grade() > other.average_grade()
+
+    def __ge__(self, other):
+        return self.average_grade() >= other.average_grade()
 
 
 class Reviewer(Mentor):
